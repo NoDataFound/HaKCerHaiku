@@ -38,7 +38,7 @@ print(Fore.BLUE + Style.NORMAL + '''
 +---------------+---------------------------------------------------------+
 | Examples      | (@corykennedy "nano") until:2022-07-30 since:2010-01-01 |
 |               | (from:securiteestar) until:2022-07-30 since:2022-01-01  |
-|               | #hacking                                                |
+|               | (#hacking) until:2022-07-30 since:2010-01-01            |
 |               | (from:sec_kc to:corykennedy)                            |
 +---------------+---------------------------------------------------------+''')
 query = input(Fore.CYAN + Style.BRIGHT + "𝙴𝚗𝚝𝚎𝚛 𝚃𝚠𝚒𝚝𝚝𝚎𝚛 𝚀𝚞𝚎𝚛𝚢 >> " + Fore.MAGENTA + Style.BRIGHT)
@@ -55,7 +55,7 @@ for tweet in sntwitter.TwitterSearchScraper(query).get_items():
 pd.set_option('display.max_colwidth', 100)        
 tweet_df = pd.DataFrame(tweets, columns=['Tweet'])
 logfile = query + '.log'
-logfile = re.sub('[()$@&:" __]','',logfile)
+logfile = re.sub('[()$@&:#" __]','',logfile)
 #print(logfile)
 
 for tweet in tweets:
