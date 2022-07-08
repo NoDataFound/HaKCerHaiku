@@ -60,7 +60,6 @@ logfile = re.sub('[()$@&:#" __]','',logfile)
 
 for tweet in tweets:
     cleaned = html.unescape(tweet[0].strip())
-    print(html.unescape(tweet[0]))
     tweetlog = open(logfile, 'a')
     tweetlog.write("%s\n" % cleaned)
     tweetlog.close()
